@@ -1,0 +1,367 @@
+/* use class */
+
+
+/* data-aos="fade-up"
+data-aos="fade-down"
+data-aos="fade-right"
+data-aos="fade-left"
+data-aos="zoom-in"
+data-aos="zoom-out"
+data-aos="slide-up"
+data-aos="flip-up"
+data-aos="flip-down"
+data-aos="flip-right"
+data-aos="flip-left" */
+
+@keyframes toLeft {
+    0% {
+        left: 50%;
+    }
+    50% {
+        left: -10%;
+    }
+    100% {
+        left: 50%;
+    }
+}
+
+@keyframes toRight {
+    0% {
+        left: 50%;
+    }
+    50% {
+        left: 110%;
+    }
+    100% {
+        left: 50%;
+    }
+}
+
+@keyframes scalable {
+    form {
+        transform: scale(0.1);
+    }
+    to {
+        transform: scale(0.9);
+    }
+}
+
+@keyframes rotable {
+    form {
+        transform: rotate(10deg);
+    }
+    to {
+        transform: rotate(-10deg);
+    }
+}
+
+@keyframes tangable {
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(10deg);
+    }
+    75% {
+        transform: rotate(-10deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+
+/* make keyframes that tell the start state and the end state of our object */
+
+@-webkit-keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.fade-in {
+    opacity: 0;
+    /* make things invisible upon start */
+    -webkit-animation: fadeIn ease-in 1;
+    /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+    -moz-animation: fadeIn ease-in 1;
+    animation: fadeIn ease-in 1;
+    -webkit-animation-fill-mode: forwards;
+    /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+    -moz-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    -webkit-animation-duration: 1s;
+    -moz-animation-duration: 1s;
+    animation-duration: 1s;
+}
+
+.fade-in.one {
+    -webkit-animation-delay: 0.2s;
+    -moz-animation-delay: 0.2s;
+    animation-delay: 0.2s;
+}
+
+
+/* image move Continuously top to bottom and bottom to top */
+
+.vert-move {
+    -webkit-animation: mover 1s infinite alternate;
+    animation: mover 1s infinite alternate;
+}
+
+@-webkit-keyframes mover {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes mover {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-10px);
+    }
+}
+
+.vert-movex {
+    -webkit-animation: rotate 1s infinite alternate;
+    animation: rotate 1s infinite alternate;
+}
+
+@-webkit-keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(20deg);
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(20deg);
+    }
+}
+
+
+/* image move Continuously top to bottom and bottom to top */
+
+.arrow-move {
+    -webkit-animation: arrow-mover 1s infinite alternate;
+    animation: arrow-mover 1s infinite alternate;
+}
+
+.arrow-move {
+    -webkit-animation: arrow-mover 1s infinite alternate;
+    animation: arrow-mover 1s infinite alternate;
+}
+
+@-webkit-keyframes arrow-mover {
+    0% {
+        transform: translatex(0);
+    }
+    100% {
+        transform: translatex(-10px);
+    }
+}
+
+@keyframes arrow-mover {
+    0% {
+        transform: translatex(0);
+    }
+    100% {
+        transform: translatex(-10px);
+    }
+}
+
+
+/* bottom to top button */
+
+#button {
+    background: #65C9BB;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    position: fixed;
+    bottom: 100px;
+    right: 30px;
+    transition: background-color .3s, opacity .5s, visibility .5s;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1000;
+}
+
+#button::after {
+    content: "\f077";
+    font-family: FontAwesome;
+    font-size: 20px;
+    color: #fff;
+}
+
+#button:hover {
+    cursor: pointer;
+    background-color: #F15B43;
+}
+
+#button:active {
+    background-color: #F15B43;
+}
+
+#button.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* bottom to top button */
+
+.cursor {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    position: absolute;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-out;
+    animation: cursorAnim 0.5s infinite alternate;
+    pointer-events: none;
+    z-index: 99999999;
+    bottom: 100px;
+    left: 100px;
+    opacity: 0.75
+}
+
+.cursor::after {
+    content: "";
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    border: 9px solid #fff;
+    border-radius: 50%;
+    animation: cursorAnim2 0.5s infinite alternate;
+    top: 10%;
+    left: 13%;
+}
+
+@keyframes cursorAnim {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(0.7);
+    }
+}
+
+@keyframes cursorAnim2 {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(0.4);
+    }
+}
+
+@keyframes cursorAnim3 {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(3);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0;
+    }
+}
+
+
+/* Animation */
+
+@keyframes fadeInUp {
+    from {
+        transform: translate3d(0, 40px, 0)
+    }
+    to {
+        transform: translate3d(0, 0, 0);
+        opacity: 1
+    }
+}
+
+@-webkit-keyframes fadeInUp {
+    from {
+        transform: translate3d(0, 40px, 0)
+    }
+    to {
+        transform: translate3d(0, 0, 0);
+        opacity: 1
+    }
+}
+
+.animated {
+    animation-duration: 2s;
+    animation-fill-mode: both;
+    -webkit-animation-duration: 2s;
+    -webkit-animation-fill-mode: both
+}
+
+.animatedFadeInUp {
+    opacity: 0
+}
+
+.fadeInUp {
+    opacity: 0;
+    animation-name: fadeInUp;
+    -webkit-animation-name: fadeInUp;
+}
+
+.bg-moving {
+    -webkit-animation: slide 20s linear infinite;
+    animation: slide 20s linear infinite;
+}
+
+@keyframes slide {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 0 -400px;
+    }
+}
+
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(359deg);
+    }
+}
